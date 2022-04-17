@@ -19,5 +19,8 @@
   "homepage": "https://github.com/esowunmi2016/Brunches-Database#readme",
   "engines": {
     "node": "16.14.2"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1"
   }
 }
