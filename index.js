@@ -3,9 +3,9 @@ var http = require('http');
 
 
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "yourusername",
-  password: "yourpassword"
+  host: "showemz",
+  user: "host",
+  password: "Arike1Ayo"
 });
 
 con.connect(function(err) {
