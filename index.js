@@ -1,14 +1,10 @@
 const { Client } = require('pg');
+
 const express = require('express');
 const app = express()
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// const bodyParser = require('body-parser');
-
-// app.use(bodyParser.json()); //Handles JSON requests
-// app.use(bodyParser.urlencoded({ extended: false })); //Handles normal post requests
 
 
 const client = new Client({
@@ -28,17 +24,14 @@ app.post('/', (req, res) => {
   const email = req.body.email;
   const number = req.body.number;
 
-  // res.send({
-  //   "First name":fname,
-  //   "Last name":lname,
-  //   "Email":email,
-  //   "Phone number":number,
-  // })
+  res.send({
+    "First name":fname,
+    "Last name":lname,
+    "Email":email,
+    "Phone number":number,
+  })
 
-  res.write(`First Name: ${fname}`)
-  res.end()
 
-  
   // const sql = `
   //   INSERT INTO customerbase(firstname, lastname, email, phonenumber)
   //   VALUES (${fname},${lname},${email},${number});
