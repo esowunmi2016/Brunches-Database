@@ -30,7 +30,8 @@ function checkTables(callBack){
     if (err) throw err;
     for (let row of res.rows) {
       // console.log(JSON.stringify(row));
-      x.push(JSON.stringify(row))
+      // x.push(JSON.stringify(row))
+      callBack(JSON.stringify(row))
     }
     client.end();
   });
