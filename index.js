@@ -24,24 +24,24 @@ app.post('/', (req, res) => {
   const email = req.body.email;
   const number = req.body.number;
 
-  res.send({
-    "First name":fname,
-    "Last name":lname,
-    "Email":email,
-    "Phone number":number,
-  })
+  // res.send({
+  //   "First name":fname,
+  //   "Last name":lname,
+  //   "Email":email,
+  //   "Phone number":number,
+  // })
 
 
-  // const sql = `
-  //   INSERT INTO customerbase(firstname, lastname, email, phonenumber)
-  //   VALUES (${fname},${lname},${email},${number});
-  // `
+  const sql = `
+    INSERT INTO customerbase(firstname, lastname, email, phonenumber)
+    VALUES (${fname},${lname},${email},${number});
+  `
 
-  // client.query(sql, (err, res) => {
-  //   if (err) throw err;
-  //   console.log(res)
-  //   client.end();
-  // });
+  client.query(sql, (err, res) => {
+    if (err) throw err;
+    console.log(res)
+    client.end();
+  });
 
 })
 
