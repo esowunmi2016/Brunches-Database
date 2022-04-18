@@ -28,12 +28,15 @@ app.post('/', (req, res) => {
   const email = req.body.email;
   const number = req.body.number;
 
-  res.send({
-    "First name":fname,
-    "Last name":lname,
-    "Email":email,
-    "Phone number":number,
-  })
+  // res.send({
+  //   "First name":fname,
+  //   "Last name":lname,
+  //   "Email":email,
+  //   "Phone number":number,
+  // })
+
+  res.write(`First Name: ${fname}`)
+  res.end()
 
   
   // const sql = `
