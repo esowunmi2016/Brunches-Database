@@ -33,8 +33,8 @@ app.post('/', (req, res) => {
 
 
   const sql = `
-    INSERT INTO customerbase(firstname, lastname, email, phonenumber)
-    VALUES ('${fname}','${lname}','${email}','${number}');
+  INSERT INTO customerbase (firstname, lastname, email, phonenumber)
+  VALUES('${fname}','${lname}', '${email}', '${number}');
   `
 
   client.query(sql, (err, res) => {
