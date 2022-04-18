@@ -25,13 +25,18 @@ client.connect();
 // const sql = 'DROP TABLE IF EXISTS example_table; '
 
 
-const sql = `CREATE TABLE customerbase (
-	id serial PRIMARY KEY,
-	firstname VARCHAR ( 50 ) NOT NULL,
-	lastname VARCHAR ( 50 ) NOT NULL,
-	email VARCHAR ( 255 ) NOT NULL,
-  phoneNumber INT NOT NULL
-);`
+// USED TO CREATE THE TABLE
+
+// const sql = `CREATE TABLE customerbase (
+// 	id serial PRIMARY KEY,
+// 	firstname VARCHAR ( 50 ) NOT NULL,
+// 	lastname VARCHAR ( 50 ) NOT NULL,
+// 	email VARCHAR ( 255 ) NOT NULL,
+//   phoneNumber INT NOT NULL
+// );`
+
+
+
 
 client.query(sql, (err, res) => {
   if (err) throw err;
