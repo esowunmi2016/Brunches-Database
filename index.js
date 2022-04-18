@@ -19,10 +19,10 @@ client.connect();
 
 app.post('/', (req, res) => {
 
-  const fname = req.body.fname;
-  const lname = req.body.lname;
-  const email = req.body.email;
-  const number = req.body.number;
+  const fname = mysql.escape(req.body.fname);
+  const lname = mysql.escape(req.body.lname);
+  const email = mysql.escape(req.body.email);
+  const number = mysql.escape(req.body.number);
 
   // res.send({
   //   "First name":fname,
