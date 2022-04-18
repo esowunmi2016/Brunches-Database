@@ -12,12 +12,10 @@ const app = express()
 
 
 app.get('/', (req, res) => {
-  res.send('Ileke lo ma jeya!!!')
+  res.send('Ileke lo ma jeya 2 !!!')
 })
 
-app.listen(process.env.PORT || 8080, () => {
-  // console.log(`Example app listening on port ${process.env.PORT}`)
-})
+app.listen(process.env.PORT || 8080)
 
 
 const client = new Client({
