@@ -38,11 +38,11 @@ client.connect();
 
 
 
-client.query(sql, (err, res) => {
-  if (err) throw err;
-  // for (let row of res.rows) {
-  //   console.log(JSON.stringify(row));
-  // }
-  console.log(res)
-  client.end();
-});
+// client.query(sql, (err, res) => {
+//   if (err) throw err;
+//   // for (let row of res.rows) {
+//   //   console.log(JSON.stringify(row));
+//   // }
+//   console.log(res)
+//   client.end();
+// });
