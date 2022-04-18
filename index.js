@@ -36,12 +36,13 @@ app.post('/', (req, res) => {
   INSERT INTO customerbase (firstname, lastname, email)
   VALUES('${fname}', '${lname}','${email}');
   `
-
   client.query(sql, (err, res) => {
     if (err) throw err;
     console.log(res)
     client.end();
   });
+
+  res.send('successful')
 
 })
 
