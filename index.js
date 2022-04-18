@@ -21,13 +21,7 @@ client.connect();
 
 // const sql = 'SELECT table_schema,table_name FROM information_schema.tables;'
 // const sql = 'SELECT DB_NAME() AS Current Database;'
-const sql = `CREATE TABLE Customer Base (
-  ID int NOT NULL AUTO_INCREMENT,
-  FirstName varchar(255) NOT NULL,
-  LastName varchar(255) NOT NULL,
-  LastName varchar(255) NOT NULL,
-  PhoneNumber int,
-);`
+const sql = `CREATE TABLE Customer Base (ID int NOT NULL AUTO_INCREMENT,FirstName varchar(255) NOT NULL,LastName varchar(255) NOT NULL,LastName varchar(255) NOT NULL,PhoneNumber int,);`
 
 client.query(sql, (err, res) => {
   if (err) throw err;
