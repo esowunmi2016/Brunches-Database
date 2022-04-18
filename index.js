@@ -17,7 +17,11 @@ client.connect();
 
 
 app.post('/', (req, res) => {
-  res.send(req.body.name)
+  const name = req.body.name;
+
+  res.send({
+    "name":name
+  })
 })
 
 app.listen(process.env.PORT || 8080)
