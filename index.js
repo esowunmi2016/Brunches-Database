@@ -21,7 +21,10 @@ client.connect();
 
 // const sql = 'SELECT table_schema,table_name FROM information_schema.tables;'
 // const sql = 'SELECT DB_NAME() AS Current Database;'
-const sql = 'CREATE TABLE example_table ( a INTEGER );'
+
+const sql = 'DROP TABLE [IF EXISTS] table_name '
+
+// const sql = 'CREATE TABLE example_table ( a INTEGER );'
 
 client.query(sql, (err, res) => {
   if (err) throw err;
