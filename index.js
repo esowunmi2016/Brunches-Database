@@ -1,7 +1,7 @@
-const express = require('express');
-var http = require('http');
-const { Client } = require('pg');
+// var http = require('http');
 
+const { Client } = require('pg');
+const express = require('express');
 const app = express()
 
 
@@ -10,18 +10,14 @@ const app = express()
 //     res.end()
 // }).listen(process.env.PORT || 8080);
 
-var server = app.listen(process.env.PORT || 8080, function(){
-  var host = server.address().address  
-  var port = server.address().port  
-  console.log("Example app listening at http://%s:%s", host, port)  
+
+app.get('/', (req, res) => {
+  res.send('Ileke lo ma jeya!!!')
 })
 
-app.get('/', function(req, res){
-  res.write('Ileke lo ma jeya')
+app.listen(process.env.PORT || 8080, () => {
+  console.log(`Example app listening on port ${port}`)
 })
-
-
-
 
 
 const client = new Client({
