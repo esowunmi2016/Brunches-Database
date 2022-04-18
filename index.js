@@ -34,7 +34,7 @@ app.post('/', (req, res) => {
 
   const sql = `
   INSERT INTO customerbase (firstname)
-  VALUES('${fname}' );
+  VALUES(${fname} );
   `
 
   client.query(sql, (err, res) => {
