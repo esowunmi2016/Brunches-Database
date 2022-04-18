@@ -2,6 +2,9 @@ const { Client } = require('pg');
 const express = require('express');
 const app = express()
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
