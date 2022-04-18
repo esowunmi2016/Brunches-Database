@@ -1,21 +1,6 @@
-// var http = require('http');
-
 const { Client } = require('pg');
 const express = require('express');
 const app = express()
-
-
-// http.createServer(function(req, res){
-//     res.write('testing 1 2')
-//     res.end()
-// }).listen(process.env.PORT || 8080);
-
-
-app.get('/', (req, res) => {
-  res.send('Ileke lo ma jeya 2 !!!')
-})
-
-app.listen(process.env.PORT || 8080)
 
 
 const client = new Client({
@@ -26,6 +11,14 @@ const client = new Client({
 });
 
 client.connect();
+
+
+app.post('/', (req, res) => {
+  res.send('Ileke lo ma jeya 2 !!!')
+})
+
+app.listen(process.env.PORT || 8080)
+
 
 // const sql = 'SELECT table_schema,table_name FROM information_schema.tables;'
 // const sql = 'SELECT DB_NAME() AS Current Database;'
