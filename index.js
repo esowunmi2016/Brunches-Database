@@ -20,7 +20,7 @@ const client = new Client({
 client.connect();
 
 // var sql = 'SELECT table_schema,table_name FROM information_schema.tables;',
-var sql = 'SELECT DB_NAME() AS [Current Database];'
+var sql = 'SELECT DB_NAME() AS Current Database;'
 
 client.query(sql, (err, res) => {
   if (err) throw err;
