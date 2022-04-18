@@ -1,12 +1,22 @@
-var mysql = require('mysql');
+const express = require('express');
 var http = require('http');
 const { Client } = require('pg');
 
+const app = express()
 
-http.createServer(function(req, res){
-    res.write('testing 1 2')
-    res.end()
-}).listen(process.env.PORT || 8080);
+
+// http.createServer(function(req, res){
+//     res.write('testing 1 2')
+//     res.end()
+// }).listen(process.env.PORT || 8080);
+
+app.listen(process.env.PORT || 8080)
+
+app.get('/', function(req, res){
+  res.write('Ileke lo ma jeya')
+})
+
+
 
 
 
