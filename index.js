@@ -37,7 +37,7 @@ app.post('/', (req, res) => {
   VALUES(E'${fname}', '${lname}','${email}', '${number}');
   `
   client.query(sql, (err, res) => {
-    if (err) throw err;
+    if (err) res.send('error');
     console.log(res)
     client.end();
   });
