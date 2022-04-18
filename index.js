@@ -14,7 +14,7 @@ client.connect();
 
 
 app.post('/', (req, res) => {
-  res.write(req.body.name)
+  res.send(req.body.name)
 })
 
 app.listen(process.env.PORT || 8080)
