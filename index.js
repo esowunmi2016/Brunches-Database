@@ -5,10 +5,10 @@ const app = express()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 
-app.use(bodyParser.json()); //Handles JSON requests
-app.use(bodyParser.urlencoded({ extended: false })); //Handles normal post requests
+// app.use(bodyParser.json()); //Handles JSON requests
+// app.use(bodyParser.urlencoded({ extended: false })); //Handles normal post requests
 
 
 const client = new Client({
