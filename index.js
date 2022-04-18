@@ -5,6 +5,11 @@ const app = express()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json()); //Handles JSON requests
+app.use(bodyParser.urlencoded({ extended: false })); //Handles normal post requests
+
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
@@ -36,11 +41,11 @@ app.post('/', (req, res) => {
   //   VALUES (${fname},${lname},${email},${number});
   // `
 
-  client.query(sql, (err, res) => {
-    if (err) throw err;
-    console.log(res)
-    client.end();
-  });
+  // client.query(sql, (err, res) => {
+  //   if (err) throw err;
+  //   console.log(res)
+  //   client.end();
+  // });
 
 })
 
