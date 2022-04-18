@@ -1,6 +1,5 @@
 const { Client } = require('pg');
 const express = require('express');
-const { json } = require('express/lib/response');
 const app = express()
 
 
@@ -15,9 +14,7 @@ client.connect();
 
 
 app.post('/', (req, res) => {
-  res.send(JSON.stringify(res))
-
-  
+  res.write(req.body.name)
 })
 
 app.listen(process.env.PORT || 8080)
