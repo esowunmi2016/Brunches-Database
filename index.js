@@ -17,11 +17,31 @@ client.connect();
 
 
 app.post('/', (req, res) => {
-  const name = req.body.name;
+
+  const fname = req.body.fname;
+  const lname = req.body.lname;
+  const email = req.body.email;
+  const number = req.body.number;
 
   res.send({
-    "name":name
+    "First name":fname,
+    "Last name":lname,
+    "Email":email,
+    "Phone number":number,
   })
+
+  
+  // const sql = `
+  //   INSERT INTO customerbase(firstname, lastname, email, phonenumber)
+  //   VALUES (${fname},${lname},${email},${number});
+  // `
+
+  client.query(sql, (err, res) => {
+    if (err) throw err;
+    console.log(res)
+    client.end();
+  });
+
 })
 
 app.listen(process.env.PORT || 8080)
