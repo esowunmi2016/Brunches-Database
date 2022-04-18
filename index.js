@@ -22,7 +22,7 @@ client.connect();
 // const sql = 'SELECT table_schema,table_name FROM information_schema.tables;'
 // const sql = 'SELECT DB_NAME() AS Current Database;'
 
-const sql = 'DROP TABLE [IF EXISTS] example_table [CASCADE | RESTRICT]; '
+const sql = 'DROP TABLE IF EXISTS example_table [CASCADE | RESTRICT]; '
 
 
 // const sql = `CREATE TABLE example_table ( 
