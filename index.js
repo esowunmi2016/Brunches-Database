@@ -42,7 +42,7 @@ app.post('/', (req, res) => {
     client.end();
   });
 
-  res.send('successful')
+  res.write('successful')
 
 })
 
