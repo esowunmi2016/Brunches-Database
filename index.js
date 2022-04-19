@@ -17,10 +17,10 @@ const client = new Client({
 client.connect();
 
 app.post('/', (req, res) => {
-  const fname = req.body.fname;
-  const lname = req.body.lname;
-  const email = req.body.email;
-  const number = req.body.number;
+  const fname = req.body.JSON.parse(fname);
+  const lname = req.body.JSON.parse(lname);
+  const email = req.body.JSON.parse(email);
+  const number = req.body.JSON.parse(number);
 
   const sql = `
   INSERT INTO customerbase (firstname, lastname, email, phonenumber)
@@ -29,7 +29,7 @@ app.post('/', (req, res) => {
   client.query(sql, (err, res) => {
     if (err){
       console.log(err)
-      res.send('error');
+      res.send(`error: ${err}`);
     } 
     console.log(res)
     client.end();
