@@ -31,10 +31,11 @@ app.post('/', (req, res) => {
     if (err){
       client.end();
       console.log(err)
-      res.write(`error: ${err}`);
-      res.end()
+      // res.write(`error: ${err}`);
+      // res.end()
     } 
     console.log(res)
+    console.log('hello,,,,,,,,,,,,,,,,,,,')
     client.end();
   });
   res.send('successful')
