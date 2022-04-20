@@ -29,6 +29,7 @@ app.post('/', (req, res) => {
   `
   client.query(sql, (err, res) => {
     if (err){
+      client.end();
       console.log(err)
       res.write(`error: ${err}`);
       res.end()
