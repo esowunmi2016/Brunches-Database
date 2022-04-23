@@ -24,7 +24,7 @@ app.post('/', (req, res) => {
   const number = req.body.number;
 
   const sql = `
-  INSERT INTO customerbase (firstname, lastname, email, phonenumber)
+  INSERT INTO brunchesCustomerbase (firstname, lastname, email, phonenumber)
   VALUES(E'${fname}', '${lname}','${email}', '${number}');
   `
   client.query(sql, (err, res) => {
