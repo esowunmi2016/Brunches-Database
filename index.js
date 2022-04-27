@@ -47,7 +47,7 @@ app.get('/', (req, res)=>{
     if (err){
       client.end();
     }
-    res.send(response)
+    res.send(response.rows)
   })
 })
 
