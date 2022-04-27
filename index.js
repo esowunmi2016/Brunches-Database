@@ -39,6 +39,18 @@ app.post('/', (req, res) => {
     // client.end();
   });
   res.send('successful')
+});
+
+app.get('/', (req, res)=>{
+  const sql = 'SELECT * FROM brunchesCustomerbase;'
+  client.query(sql, (err, res)=>{
+    if (err){
+      client.end();
+    }
+    const a = res
+    return a
+  })
+  res.send(a)
 })
 
 app.listen(process.env.PORT || 8080)
