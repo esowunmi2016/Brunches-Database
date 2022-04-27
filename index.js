@@ -41,13 +41,13 @@ app.post('/', (req, res) => {
   res.send('successful')
 });
 
-app.get('/', (req, res)=>{
+app.get('/', (req, respose)=>{
   const sql = 'SELECT * FROM brunchesCustomerbase;'
   client.query(sql, (err, res)=>{
     if (err){
       client.end();
     }
-    res.send(res)
+    res.send(respose)
   })
 })
 
