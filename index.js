@@ -47,10 +47,8 @@ app.get('/', (req, res)=>{
     if (err){
       client.end();
     }
-    const a = res
-    return a
+    res.send(res)
   })
-  res.send(a)
 })
 
 app.listen(process.env.PORT || 8080)
