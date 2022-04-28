@@ -42,11 +42,8 @@ app.post('/', (req, res) => {
 });
 
 app.get('/', (req, res)=>{
-  const pageNumber = req.query.page
   // console.log('current page is ' + req.query.page)
-  if(pageNumber === undefined){
-    pageNumber = 1
-  }
+  const pageNumber = req.query.page === undefined ? 1:req.query.page
   console.log(pageNumber)
   const pageSize = 10
   const sql = `
