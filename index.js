@@ -49,6 +49,7 @@ app.get('/', (req, res)=>{
   const sql = `
     SELECT * 
     FROM brunchesCustomerbase 
+    OFFSET ${pageNumber*pageSize-pageSize} ROWS
   `
   // const sql = `
   //   SELECT * 
