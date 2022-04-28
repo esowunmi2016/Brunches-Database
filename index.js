@@ -47,17 +47,17 @@ app.get('/', (req, res)=>{
   const pageSize = 10
   
   // SQL LOGIC TO HANDLE PAGINATION 
-  // const sql = `
-  //   SELECT * 
-  //   FROM brunchesCustomerbase 
-  //   OFFSET ${pageNumber*pageSize}
-  //   FETCH FIRST ${pageSize} ROW ONLY;
-  // `
-
   const sql = `
     SELECT * 
     FROM brunchesCustomerbase 
+    OFFSET ${(pageNumber*pageSize)-pageNumber}
+    FETCH FIRST ${pageSize} ROW ONLY;
   `
+
+  // const sql = `
+  //   SELECT * 
+  //   FROM brunchesCustomerbase 
+  // `
   client.query(sql, (err, response)=>{
     if (err){
       client.end();
