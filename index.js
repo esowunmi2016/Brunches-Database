@@ -42,11 +42,9 @@ app.post('/', (req, res) => {
 });
 
 app.get('/', (req, res)=>{
-  // console.log('current page is ' + req.query.page) 
+  // console.log('current page is ' + req.query.page)
   const pageNumber = req.query.page
-  const pageSize = 10
-
-
+  const pageSize = 20
   const sql = `
     SELECT * 
     FROM brunchesCustomerbase 
@@ -55,7 +53,7 @@ app.get('/', (req, res)=>{
     if (err){
       client.end();
     }
-      res.send(response.rows)
+    res.send(response.rows)
   })
 })
 
