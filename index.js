@@ -59,9 +59,8 @@ app.get('/', (req, res)=>{
   //   FROM brunchesCustomerbase 
   // `
   client.query(sql, (err, response)=>{
-    if (err){
-      client.end();
-    }
+    if (err) return res.status(400).send(err);
+
     res.send(response.rows)
   })
 })
