@@ -46,23 +46,16 @@ app.get('/', (req, res)=>{
   const pageNumber = req.query.page
   const pageSize = 10
 
-  const a = ((pageNumber*pageSize)-pageNumber).toString()
-  const b = pageSize.toString()
-  // SQL LOGIC TO HANDLE PAGINATION 
-  const sql = 'SELECT * FROM brunchesCustomerbase OFFSET' +a+ 'FETCH FIRST' +b+ 'ROW ONLY;'
 
-  // const sql = `
-  //   SELECT * 
-  //   FROM brunchesCustomerbase 
-  // `
+  const sql = `
+    SELECT * 
+    FROM brunchesCustomerbase 
+  `
   client.query(sql, (err, response)=>{
     if (err){
       client.end();
     }
-    if(response.rows){
-
       res.send(response.rows)
-    }
   })
 })
 
