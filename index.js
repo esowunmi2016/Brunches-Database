@@ -44,11 +44,16 @@ app.post('/', (req, res) => {
 app.get('/', (req, res)=>{
   // console.log('current page is ' + req.query.page)
   const pageNumber = req.query.page
+  console.log(pageNumber)
   const pageSize = 20
   const sql = `
     SELECT * 
     FROM brunchesCustomerbase 
   `
+  // const sql = `
+  //   SELECT * 
+  //   FROM brunchesCustomerbase 
+  // `
   client.query(sql, (err, response)=>{
     if (err){
       client.end();
