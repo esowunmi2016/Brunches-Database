@@ -50,6 +50,7 @@ app.get('/', (req, res)=>{
     SELECT * 
     FROM brunchesCustomerbase 
     OFFSET ${pageNumber*pageSize-pageSize} ROWS
+    FETCH FIRST ${pageSize} ROW ONLY 
   `
   // const sql = `
   //   SELECT * 
