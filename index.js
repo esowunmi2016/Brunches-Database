@@ -48,8 +48,6 @@ app.get('/', (req, res)=>{
   const sql = `
     SELECT * 
     FROM brunchesCustomerbase 
-    OFFSET ${pageNumber*pageSize} ROWS 
-    FETCH FIRST ${pageSize} ROW ONLY;
   `
   client.query(sql, (err, response)=>{
     if (err){
