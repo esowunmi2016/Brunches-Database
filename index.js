@@ -42,6 +42,7 @@ app.post('/', (req, res) => {
 });
 
 app.get('/', (req, res)=>{
+  console.log('current page is ' + req.query.page)
   const sql = 'SELECT * FROM brunchesCustomerbase;'
   client.query(sql, (err, response)=>{
     if (err){
