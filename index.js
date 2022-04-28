@@ -44,11 +44,19 @@ app.post('/', (req, res) => {
 app.get('/', (req, res)=>{
   // console.log('current page is ' + req.query.page) 
   const pageNumber = req.query.page
-  // const pageSize = 10
+  const pageSize = 10
+  
+  // SQL LOGIC TO HANDLE PAGINATION 
+  // const sql = `
+  //   SELECT * 
+  //   FROM brunchesCustomerbase 
+  //   OFFSET ${pageNumber*pageSize}
+  //   FETCH FIRST ${pageSize} ROW ONLY;
+  // `
+
   const sql = `
     SELECT * 
     FROM brunchesCustomerbase 
-    OFFSET ${pageNumber*pageSize}
   `
   client.query(sql, (err, response)=>{
     if (err){
