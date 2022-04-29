@@ -50,13 +50,14 @@ app.get('/', (req, res)=>{
   const email = req.query.email === undefined ? '%':req.query.email
   const number = req.query.number === undefined ? '%':req.query.number
 
-  console.log(req.query)
-  console.log(req.query.fname)
+  console.log('query '+req.query)
+  console.log('fname '+req.query.fname)
+  console.log('')
   const pageSize = 5
   const sql = `
     SELECT * 
     FROM brunchesCustomerbase 
-    WFERE UPPER(firstname) LIKE UPPER(${fname})
+    WFERE UPPER(firstname) LIKE UPPER('%')
     OFFSET ${pageNumber*pageSize-pageSize} ROWS
     FETCH FIRST ${pageSize} ROW ONLY 
   `
