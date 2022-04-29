@@ -46,18 +46,18 @@ app.get('/', (req, res)=>{
   const pageNumber = req.query.page === undefined ? 1:req.query.page
   
   const fname = req.query.fname === undefined || req.query.fname === '' ? '%':`%${req.query.fname}%`
-  const lname = req.query.lname === undefined ? '%':req.query.lname
-  const email = req.query.email === undefined ? '%':req.query.email
-  const number = req.query.number === undefined ? '%':req.query.number
+  const lname = req.query.lname === undefined || req.query.lname === '' ? '%':`%${req.query.lname}%`
+  const email = req.query.email === undefined || req.query.email === '' ? '%':`%${req.query.email}%`
+  const number = req.query.number === undefined || req.query.number === '' ? '%':`%${req.query.number}%`
 
-  console.log('query '+req.query)
-  console.log('fname query '+req.query.fname)
-  console.log('fname var '+fname)
   const pageSize = 5
   const sql = `
     SELECT * 
     FROM brunchesCustomerbase 
     WHERE UPPER(firstname) LIKE UPPER('${fname}')
+    and UPPER(lastname) LIKE UPPER('${lname}')
+    and UPPER(email) LIKE UPPER('${email}')
+    and UPPER(phonenumber) LIKE UPPER('${number}')
     OFFSET ${pageNumber*pageSize-pageSize} ROWS
     FETCH FIRST ${pageSize} ROW ONLY 
   `
