@@ -57,10 +57,6 @@ app.get('/', (req, res)=>{
     FROM brunchesCustomerbase 
     OFFSET ${pageNumber*pageSize-pageSize} ROWS
     FETCH FIRST ${pageSize} ROW ONLY 
-    WHERE UPPER(firstname) LIKE UPPER(${fname})
-    AND UPPER(lastname) LIKE UPPER(${lname})
-    AND UPPER(email) LIKE UPPER(${email})
-    AND UPPER(phonenumber) LIKE UPPER(${number})
   `
   // const sql = `
   //   SELECT * 
