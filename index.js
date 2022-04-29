@@ -56,11 +56,18 @@ app.get('/', (req, res)=>{
     FROM brunchesCustomerbase 
     OFFSET ${pageNumber*pageSize-pageSize} ROWS
     FETCH FIRST ${pageSize} ROW ONLY 
-    WHERE UPPER(firstname) LIKE UPPER(${fname}) AND
-    WHERE UPPER(lastname) LIKE UPPER(${lname}) AND
-    WHERE UPPER(email) LIKE UPPER(${email}) AND
-    WHERE UPPER(phonenumber) LIKE UPPER(${number});
-  `
+  ;`
+  
+  // const sql = `
+  //   SELECT * 
+  //   FROM brunchesCustomerbase 
+  //   OFFSET ${pageNumber*pageSize-pageSize} ROWS
+  //   FETCH FIRST ${pageSize} ROW ONLY 
+  //   WHERE UPPER(firstname) LIKE UPPER(${fname}) AND
+  //   WHERE UPPER(lastname) LIKE UPPER(${lname}) AND
+  //   WHERE UPPER(email) LIKE UPPER(${email}) AND
+  //   WHERE UPPER(phonenumber) LIKE UPPER(${number});
+  // `
   // const sql = `
   //   SELECT * 
   //   FROM brunchesCustomerbase 
