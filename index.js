@@ -57,7 +57,7 @@ app.get('/', (req, res)=>{
   const sql = `
     SELECT * 
     FROM brunchesCustomerbase 
-    WFERE UPPER(firstname) LIKE UPPER('%')
+    WHERE UPPER(firstname) LIKE UPPER('%')
     OFFSET ${pageNumber*pageSize-pageSize} ROWS
     FETCH FIRST ${pageSize} ROW ONLY 
   `
