@@ -51,6 +51,7 @@ app.get('/', (req, res)=>{
   const number = req.query.number === undefined ? '%':req.query.number
 
   console.log(req.query)
+  console.log(req.query.fname)
   const pageSize = 10
   const sql = `
     SELECT * 
