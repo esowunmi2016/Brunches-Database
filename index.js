@@ -52,7 +52,7 @@ app.get('/', (req, res)=>{
 
   console.log(req.query)
   console.log(req.query.fname)
-  const pageSize = 10
+  const pageSize = 5
   const sql = `
     SELECT * 
     FROM brunchesCustomerbase 
