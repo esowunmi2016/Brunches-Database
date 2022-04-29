@@ -45,6 +45,11 @@ app.get('/', (req, res)=>{
   // console.log('current page is ' + req.query.page)
   const pageNumber = req.query.page === undefined ? 1:req.query.page
   
+  const fname = req.query.fname === undefined ? '%':req.query.fname
+  const lname = req.query.lname === undefined ? '%':req.query.lname
+  const email = req.query.email === undefined ? '%':req.query.email
+  const number = req.query.number === undefined ? '%':req.query.number
+
   // console.log(req)
   const pageSize = 10
   const sql = `
@@ -52,6 +57,10 @@ app.get('/', (req, res)=>{
     FROM brunchesCustomerbase 
     OFFSET ${pageNumber*pageSize-pageSize} ROWS
     FETCH FIRST ${pageSize} ROW ONLY 
+    WHERE UPPER(firstname) LIKE UPPER(${fname})
+    AND UPPER(lastname) LIKE UPPER(${lname})
+    AND UPPER(email) LIKE UPPER(${email})
+    AND UPPER(phonenumber) LIKE UPPER(${number})
   `
   // const sql = `
   //   SELECT * 
