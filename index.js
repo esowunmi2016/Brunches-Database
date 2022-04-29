@@ -45,10 +45,6 @@ app.get('/', (req, res)=>{
   // console.log('current page is ' + req.query.page)
   const pageNumber = req.query.page === undefined ? 1:req.query.page
   
-  const fname = req.query.fname === undefined ? '':req.query.fname
-  const lname = req.query.lname === undefined ? '':req.query.lname
-  const email = req.query.email === undefined ? '':req.query.email
-  const number = req.query.number === undefined ? '':req.query.number
   console.log(req)
   const pageSize = 10
   const sql = `
