@@ -55,6 +55,7 @@ app.get('/', (req, res)=>{
     SELECT * 
     FROM brunchesCustomerbase 
     WHERE UPPER(firstname) LIKE UPPER('${fname}')
+    OR Upper(lastname) LIKE UPPER('${lname}')
     OFFSET ${pageNumber*pageSize-pageSize} ROWS
     FETCH FIRST ${pageSize} ROW ONLY 
   `
