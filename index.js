@@ -61,11 +61,16 @@ app.get('/', (req, res)=>{
     OFFSET ${pageNumber*pageSize-pageSize} ROWS
     FETCH FIRST ${pageSize} ROW ONLY 
   `
-  // const sql = `
-  //   SELECT * 
-  //   FROM brunchesCustomerbase 
-  // `
+  const sql2 = `
+    SELESCT COUNT(*) FROM brunchesCuatomerbase
+  `
   client.query(sql, (err, response)=>{
+    if (err){
+      client.end();
+    }
+    res.send(response.rows)
+  })
+  client.query(sql2, (err, response)=>{
     if (err){
       client.end();
     }
