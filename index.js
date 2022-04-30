@@ -70,8 +70,7 @@ app.get('/', (req, res)=>{
     res.send(response.rows)
     client.query(sql2, (err, response)=>{
       console.log('3 '+response)
-      // console.log('4 '+response.count)
-      // res.send(response.rows)
+      res.send(response)
     })
   })
 })
