@@ -70,13 +70,6 @@ app.get('/', (req, res)=>{
     }
     res.send(response.rows)
   })
-  client.query(sql2, (err, response)=>{
-    if (err){
-      client.end();
-    }
-    console.log(response)
-    // res.send(response.rows)
-  })
 })
 
 app.listen(process.env.PORT || 8080)
