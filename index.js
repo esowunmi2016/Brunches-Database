@@ -72,7 +72,7 @@ app.get('/', (req, res)=>{
     client.query(sql2, (err, response2)=>{
       if(err){throw err}
       console.log('3 '+response2)
-      res.send({0:response.rows, 1:response2.rows.count})
+      res.send({0:response.rows, 1:response2.rows})
     })
   })
 })
