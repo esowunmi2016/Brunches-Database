@@ -58,7 +58,7 @@ app.get('/', (req, res)=>{
     OR Upper(lastname) LIKE UPPER('${lname}')
     OR Upper(email) LIKE UPPER('${email}')
     OR Upper(phonenumber) LIKE UPPER('${number}')
-    OFFSET ${pageNumber*pageSize} ROWS
+    OFFSET ${pageNumber*pageSize-pageSize} ROWS
     FETCH FIRST ${pageSize} ROW ONLY 
   `
   const sql2 = `
