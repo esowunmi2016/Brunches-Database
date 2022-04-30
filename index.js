@@ -68,9 +68,9 @@ app.get('/', (req, res)=>{
     console.log('1 '+response)
     console.log('2 '+response.rows)
     res.send(response.rows)
-    client.query(sql2, (err, response)=>{
-      console.log('3 '+response)
-      res.send(response)
+    client.query(sql2, (err, response2)=>{
+      console.log('3 '+response2)
+      res.send(response2)
     })
   })
 })
