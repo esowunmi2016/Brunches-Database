@@ -64,13 +64,15 @@ app.get('/', (req, res)=>{
   const sql2 = `
     SELESCT COUNT(*) FROM brunchesCuatomerbase
   `
-  client.query(sql, (err, response, fields)=>{
+  client.query(sql, (err, response)=>{
+    if(err){throw err}
     console.log('1 '+response)
     console.log('2 '+response.rows)
     // res.send(response.rows)
-    client.query(sql2, (err, response2, fields)=>{
+    client.query(sql2, (err, response2)=>{
+      if(err){throw err}
       console.log('3 '+response2)
-      res.send(response2)
+      res.send({0:response, 1:response2})
     })
   })
 })
