@@ -74,7 +74,8 @@ app.get('/', (req, res)=>{
       console.log('3 '+response2)
       res.send({
         data:response.rows, 
-        total:response2.rows[0].count
+        total:response2.rows[0].count,
+        pageSize
       })
     })
   })
