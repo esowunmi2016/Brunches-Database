@@ -65,10 +65,14 @@ app.get('/', (req, res)=>{
     SELESCT COUNT(*) FROM brunchesCuatomerbase
   `
   client.query(sql, (err, response)=>{
-    if (err){
-      client.end();
-    }
+    // if (err){
+    //   client.end();
+    // }
     res.send(response.rows)
+    client.query(sql2, (err, response)=>{
+      console.log(response)
+      // res.send(response.rows)
+    })
   })
 })
 
