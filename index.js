@@ -62,7 +62,7 @@ app.get('/', (req, res)=>{
     FETCH FIRST ${pageSize} ROW ONLY 
   `
   const sql2 = `
-    SELECT COUNT(*) FROM brunchesCuatomerbase
+    SELECT COUNT(*) FROM brunchesCustomerbase
   `
   client.query(sql, (err, response)=>{
     if(err){throw err}
