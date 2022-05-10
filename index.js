@@ -15,6 +15,8 @@ const client = new Client({
   }
 });
 
+const table = 'brunchesCustomerbase'
+
 client.connect();
 
 app.post('/', (req, res) => {
@@ -82,7 +84,14 @@ app.get('/', (req, res)=>{
 })
 
 app.get('/excel', (req, res)=>{
-  res.send('HELLO FROM EXCEL')
+  const sql = `
+    SELECT * FROM ${table}
+  `
+
+  client.query(sql, (err, response)=>{
+    if (err) throw err
+    app.send(response)
+  })
 })
 
 app.listen(process.env.PORT || 8080)
