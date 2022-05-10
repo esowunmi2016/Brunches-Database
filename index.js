@@ -90,7 +90,7 @@ app.get('/excel', (req, res)=>{
 
   client.query(sql, (err, response)=>{
     if (err) throw err
-    app.send(response)
+    res.send(response)
   })
 })
 
