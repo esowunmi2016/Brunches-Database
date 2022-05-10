@@ -81,4 +81,8 @@ app.get('/', (req, res)=>{
   })
 })
 
+app.get('/excel', (req, res)=>{
+  res.send('HELLO FROM EXCEL')
+})
+
 app.listen(process.env.PORT || 8080)
