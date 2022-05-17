@@ -15,7 +15,7 @@ const client = new Client({
   }
 });
 
-const table = 'brunchesCustomerbase'
+const table = 'customerBase'
 
 client.connect();
 
@@ -26,7 +26,7 @@ app.post('/', (req, res) => {
   const number = req.body.number;
 
   const sql = `
-  INSERT INTO brunchesCustomerbase (firstname, lastname, email, phonenumber)
+  INSERT INTO ${table} (firstname, lastname, email, phonenumber)
   VALUES(E'${fname}', '${lname}','${email}', '${number}');
   `
   client.query(sql, (err, res) => {
@@ -55,7 +55,7 @@ app.get('/', (req, res)=>{
   const pageSize = 5
   const sql = `
     SELECT * 
-    FROM brunchesCustomerbase 
+    FROM ${table} 
     WHERE UPPER(firstname) LIKE UPPER('${fname}')
     OR Upper(lastname) LIKE UPPER('${lname}')
     OR Upper(email) LIKE UPPER('${email}')
